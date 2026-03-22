@@ -1,0 +1,279 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Breadcrumb */
+#breadcrumbs {
+    margin: 10px 0 20px 20px;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+#breadcrumbs p {
+    margin: 0;
+}
+
+#breadcrumbs a {
+    text-decoration: none;
+    color: #4a5568;
+}
+
+#breadcrumbs a:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+/* Contenido principal */
+#main_reserva {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    margin: 30px 0;
+    align-items: start;
+}
+
+/* Panel de resumen (izquierda) */
+#panel_resumen {
+    background-color: white;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+#imagen_placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: #cbd5e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#imagen_placeholder svg {
+    width: 120px;
+    height: 120px;
+}
+
+#titulo_viaje {
+    color: #2c3e50;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 20px 25px 10px 25px;
+    margin: 0;
+}
+
+#precio_viaje {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 0 25px 25px 25px;
+    margin: 0;
+}
+
+/* Formulario de reserva (derecha) */
+#formulario_reserva {
+    background-color: white;
+    border-radius: 8px;
+    padding: 35px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.campo {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 400;
+    color: #2c3e50;
+    font-size: 0.95em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="month"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-size: 0.95em;
+    font-family: inherit;
+    background-color: #f7fafc;
+    transition: border-color 0.3s, background-color 0.3s;
+    appearance: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="month"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #4299e1;
+    background-color: white;
+}
+
+/* Estilos específicos para input month */
+input[type="month"] {
+    cursor: pointer;
+    color: #2c3e50;
+}
+
+input[type="month"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    padding: 4px;
+    margin-right: -4px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+input[type="month"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+select {
+    cursor: pointer;
+    padding-right: 35px;
+}
+
+.dropdown-icon {
+    position: absolute;
+    right: 14px;
+    top: 42px;
+    pointer-events: none;
+    color: #718096;
+    font-size: 0.9em;
+}
+
+.fila-campos-dos {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.fila-campos-tres {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+
+
+#btn_reservar {
+    display: block;
+    background-color: #3182ce;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 25px;
+}
+
+#btn_reservar:hover {
+    background-color: #2c5aa0;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 25px 0;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    #main_reserva {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 600px) {
+    .container{
+        margin: 0 10px;
+    }
+    .fila-campos-dos {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
+    .fila-campos-tres {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+    }
+    #main_reserva {
+        width: 100%;
+    }
+}
+
+/* Estilos para campos dinámicos de acompañantes */
+#campos_acompanantes {
+    margin-bottom: 20px;
+}
+
+.acompanante-grupo {
+    background-color: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.acompanante-titulo {
+    color: #2c3e50;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.acompanante-grupo .fila-campos-dos {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 0;
+}
+
+.acompanante-grupo .campo {
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .acompanante-grupo .fila-campos-dos {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}

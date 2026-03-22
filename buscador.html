@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MochilerosXMundo - Buscar Viajes</title>
+    <link rel="stylesheet" href="styles/header_styles.css">
+    <link rel="stylesheet" href="styles/search_styles.css">
+    <link rel="stylesheet" href="styles/footer_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="container_header">
+            <div id="logo">
+                <h2 onclick="document.location='main.html'">MochilerosXMundo</h2>
+            </div>
+            <nav id="links_header">
+                <ul>
+                    <li><a href="buscador.html">Buscar viajes</a></li>
+                    <li><a href="otros_rincones.html">Otros rincones</a></li>
+                    <li><a href="info.html">Información</a></li>
+                </ul>
+            </nav>
+            <div id="seccion_usuario">
+                <button class="icon-btn" onclick="document.location='config.html'"><i
+                        class="fa-solid fa-gear"></i></button>
+                <button class="icon-btn"
+                    onclick="window.location.href = localStorage.getItem('usuario_logueado') ? 'perfil.html' : 'login.html'"><i
+                        class="fa-regular fa-user"></i></button>
+                <select name="idioma">
+                    <option value="ES">ES</option>
+                    <option value="EN">EN</option>
+                    <option value="GE">GE</option>
+                </select>
+            </div>
+    </header>
+
+    <nav id="breadcrumbs" aria-label="breadcrumb">
+        Buscar viajes
+    </nav>
+
+    <div class="container">
+
+        <main id="viajes_lista">
+            <h1 id="page_title" data-i18n="our_trips">Nuestros Viajes</h1>
+            <aside id="filtros_busqueda">
+                <label for="Continente"><i class="fas fa-globe-americas"></i>Continente</label>
+                <select name="Continente" id="Continente" class="select-filtro">
+                    <option value="">(continente)</option>
+                    <option value="Europa">Europa</option>
+                    <option value="Asia">Asia</option>
+                    <option value="América del Norte">América del Norte</option>
+                    <option value="América del Sur">América del Sur</option>
+                    <option value="África">África</option>
+                    <option value="Oceanía">Oceanía</option>
+                    <option value="Antártida">Antártida</option>
+                </select>
+                <label for="Price"><i class="fas fa-euro-sign"></i>Rango de precios</label>
+                <select name="Price" id="Price" class="select-filtro">
+                    <option value="">(precio)</option>
+                    <option value="500-1000">500-1000</option>
+                    <option value="1001-1500">1001-1500</option>
+                    <option value="1501-2000">1501-2000</option>
+                    <option value="2001-2500">2001-2500</option>
+                </select>
+            </aside>
+            <article id="viaje-1" class="viaje" onclick="document.location='detalles.html'">
+                <img src="media/viaje_andes.jpg" alt="Imagen del viaje a los Andes Peruanos" class="viaje-imagen">
+                <div class="viaje">
+                    <div class="viaje-descripcion">
+                        <h2 class="viaje-descripcion">Aventura en los Andes Peruanos</h2>
+                        <p class="viaje-descripcion">Descubre la majestuosidad de la cordillera de los Andes, explora
+                            ruinas
+                            incas y vive la cultura local en este viaje inolvidable que te llevará desde Cusco hasta
+                            Machu
+                            Picchu.</p>
+                    </div>
+                    <div class="viaje-detalles">
+                        <p class="precio">1,200€</p>
+                        <p class="continente">América del Sur</p>
+                    </div>
+                </div>
+            </article>
+            <article id="viaje-2" class="viaje" onclick="document.location='detalles.html'">
+                <img src="media/viaje_sudeste_asiatico.jpg" alt="Imagen del viaje al Sudeste Asiático"
+                    class="viaje-imagen">
+                <div class="viaje">
+                    <div class="viaje-descripcion">
+                        <h2 class="viaje-descripcion">Explorando el Sudeste Asiático</h2>
+                        <p class="viaje-descripcion">Sumérgete en la diversidad cultural de Tailandia, Vietnam y
+                            Camboya. Desde
+                            templos ancestrales hasta playas paradisíacas, este viaje te ofrece una experiencia
+                            completa.</p>
+                    </div>
+                    <div class="viaje-detalles">
+                        <p class="precio">800€</p>
+                        <p class="continente">Asia</p>
+                    </div>
+                </div>
+            </article>
+            <article id="viaje-3" class="viaje" onclick="document.location='detalles.html'">
+                <img src="media/viaje_sabana_africana.jpeg" alt="Imagen del viaje a la Sabana Africana"
+                    class="viaje-imagen">
+                <div class="viaje">
+                    <div class="viaje-descripcion">
+                        <h2 class="viaje-descripcion">Safari por la Sabana Africana</h2>
+                        <p class="viaje-descripcion">Vive la emoción de un safari auténtico en Tanzania y Kenia. Avista
+                            los Big
+                            Five y descubre paisajes que te dejarán sin aliento en este viaje de aventura.</p>
+                    </div>
+                    <div class="viaje-detalles">
+                        <p class="precio">2,500€</p>
+                        <p class="continente">África</p>
+                    </div>
+                </div>
+            </article>
+
+            <article id="viaje-4" class="viaje" onclick="document.location='detalles.html'">
+                <img src="media/viaje_centro_europa.jpg" alt="Imagen del viaje a Europa Central" class="viaje-imagen">
+                <div class="viaje">
+                    <div class="viaje-descripcion">
+                        <h2 class="viaje-descripcion">Ruta por Europa Central</h2>
+                        <p class="viaje-descripcion">Recorre las joyas arquitectónicas de Praga, Viena y Budapest.
+                            Disfruta de
+                            la rica historia, cultura y gastronomía en el corazón de Europa.</p>
+                    </div>
+                    <div class="viaje-detalles">
+                        <p class="precio">1,600€</p>
+                        <p class="continente">Europa</p>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>MochilerosXMundo @ 2025. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/buscador.js" defer></script>
+    <script src="js/translations.js" defer></script>
+</body>
+
+</html>

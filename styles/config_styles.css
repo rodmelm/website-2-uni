@@ -1,0 +1,342 @@
+/* config_styles.css */
+
+/* Estilos generales - Consistentes con el resto de la web */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    padding: 0 20px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Breadcrumb */
+#breadcrumbs {
+    margin: 10px 0 20px 20px;
+    color: #4a5568;
+    font-size: 15px;
+}
+
+#breadcrumbs a {
+    text-decoration: none;
+    color: #4a5568;
+}
+
+#breadcrumbs a:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+/* Panel de configuración */
+.panel-configuracion {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 30px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.titulo-configuracion {
+    font-size: 28px;
+    color: #2d3748;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.config-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.config-section h2 {
+    font-size: 18px;
+    color: #2d3748;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.config-section h2 i {
+    color: #3498db;
+    font-size: 18px;
+}
+
+/* Opciones de configuración */
+.opcion-config {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+}
+
+.opcion-principal {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.opcion-label {
+    font-size: 17px;
+    font-weight: 600;
+    color: #2d3748;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.opcion-label i {
+    color: #3498db;
+    font-size: 18px;
+}
+
+.checkbox-grande {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    accent-color: #3498db;
+}
+
+/* Subopciones */
+.subopciones {
+    padding-left: 15px;
+    border-left: 2px solid #e2e8f0;
+    margin-left: 10px;
+}
+
+.subopcion {
+    margin-bottom: 20px;
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+.subopcion-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.subopcion-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4a5568;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.subopcion-label i {
+    color: #3498db;
+    font-size: 16px;
+    width: 20px;
+}
+
+.subopcion-desc {
+    font-size: 13px;
+    color: #718096;
+    margin-top: 5px;
+    margin-left: 28px;
+}
+
+.checkbox-pequeno {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #3498db;
+}
+
+/* Selector de tamaño */
+.selector-tamano {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.selector-tamano select {
+    padding: 8px 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 15px;
+    background: white;
+    color: #4a5568;
+    cursor: pointer;
+    min-width: 180px;
+    transition: all 0.2s ease;
+}
+
+.selector-tamano select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.porcentaje {
+    font-size: 13.6px;
+    color: #718096;
+    font-style: italic;
+}
+
+/* Botones de acción */
+.config-acciones {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.btn-config {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15.2px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 220px;
+    justify-content: center;
+}
+
+.btn-config i {
+    font-size: 16px;
+}
+
+.btn-config:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-config:active {
+    transform: translateY(0);
+}
+
+.btn-secundario {
+    background: #e2e8f0;
+    color: #4a5568;
+    border: 1px solid #cbd5e0;
+}
+
+.btn-secundario:hover {
+    background: #cbd5e0;
+    border-color: #a0aec0;
+}
+
+/* Mensajes de configuración */
+.mensaje-config {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    animation: fadeIn 0.3s ease;
+}
+
+.mensaje-config.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.mensaje-config.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilos para modo daltónico */
+.modo-daltonico {
+    filter: saturate(1.5) contrast(1.2);
+}
+
+.modo-daltonico .config-section h2 i,
+.modo-daltonico .opcion-label i {
+    color: #0055cc;
+}
+
+.modo-daltonico .btn-secundario {
+    background: #ff9900;
+    color: #000;
+    border-color: #cc7700;
+}
+
+.modo-daltonico .btn-secundario:hover {
+    background: #cc7700;
+    border-color: #995500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .panel-configuracion {
+        padding: 20px;
+    }
+
+    .titulo-configuracion {
+        font-size: 27.2px;
+    }
+
+    .config-section {
+        padding: 15px;
+    }
+
+    .btn-config {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .selector-tamano {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .selector-tamano select {
+        width: 100%;
+        min-width: auto;
+    }
+}

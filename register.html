@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="registration">Registro - MochilerosXMundo</title>
+    <link rel="stylesheet" href="styles/header_styles.css">
+    <link rel="stylesheet" href="styles/register_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/register.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/config.js"></script>
+    <script src="js/translations.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div id="container_header">
+            <div id="logo">
+                <h2 onclick="document.location='main.html'">MochilerosXMundo</h2>
+            </div>
+            <nav id="links_header">
+                <ul>
+                    <li><a href="buscador.html" data-i18n="search_trips">Buscar viajes</a></li>
+                    <li><a href="otros_rincones.html" data-i18n="other_corners">Otros rincones</a></li>
+                    <li><a href="info.html" data-i18n="information">Información</a></li>
+                </ul>
+            </nav>
+            <div id="seccion_usuario">
+                <button class="icon-btn" onclick="document.location='config.html'" title="Configuración"
+                    data-i18n-title="settings">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <button class="icon-btn" onclick="document.location='login.html'" title="Iniciar sesión"
+                    data-i18n-title="login">
+                    <i class="fa-regular fa-user"></i>
+                </button>
+                <select name="idioma">
+                    <option value="ES">ES</option>
+                    <option value="EN">EN</option>
+                    <option value="GE">GE</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <nav id="breadcrumb" aria-label="breadcrumbs">
+        <ol>
+            <li aria-current="page" data-i18n="registration">Registro</li>
+        </ol>
+    </nav>
+
+    <main id="main_register">
+        <form id="formulario_registro">
+            <div class="form_row_dos">
+                <div class="campo">
+                    <label for="nombre" data-i18n="name">Nombre</label>
+                    <input type="text" id="nombre" data-i18n-placeholder="placeholder_text" placeholder="Placeholder"
+                        required>
+                </div>
+                <div class="campo">
+                    <label for="apellidos" data-i18n="surname">Apellidos</label>
+                    <input type="text" id="apellidos" data-i18n-placeholder="placeholder_text" placeholder="Placeholder"
+                        required>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label for="email" data-i18n="email">Correo</label>
+                <input type="email" id="email" data-i18n-placeholder="placeholder_text" placeholder="Placeholder"
+                    required>
+            </div>
+
+            <div class="campo">
+                <label for="confirmar_email" data-i18n="confirm_email">Confirmar correo</label>
+                <input type="email" id="confirmar_email" data-i18n-placeholder="placeholder_text"
+                    placeholder="Placeholder" required>
+            </div>
+
+            <div class="campo">
+                <label for="fecha_nacimiento" data-i18n="birth_date">Fecha de nacimiento</label>
+                <input type="text" id="fecha_nacimiento" data-i18n-placeholder="date_format" placeholder="DD | MM | AA"
+                    required>
+            </div>
+
+            <div class="form_row_dos">
+                <div class="campo">
+                    <label for="usuario" data-i18n="username">Usuario</label>
+                    <input type="text" id="usuario" data-i18n-placeholder="placeholder_text" placeholder="Placeholder"
+                        required>
+                </div>
+                <div class="campo">
+                    <label for="contraseña" data-i18n="password">Contraseña</label>
+                    <input type="password" id="contraseña" data-i18n-placeholder="placeholder_text"
+                        placeholder="Placeholder" required>
+                </div>
+            </div>
+            <div class="form_row_dos">
+                <div class="campo">
+                    <label for="pfp" data-i18n="Profile_Picture">Foto de perfil</label>
+                    <input type="file" id="pfp" accept="image/*">
+                </div>
+            </div>
+            <div class="checkbox_grupo">
+                <input type="checkbox" id="aceptar_privacidad" required>
+                <label for="aceptar_privacidad">
+                    <span data-i18n="accept_privacy">Acepto la</span> <a href="#" data-i18n="privacy_policy">Política de
+                        Privacidad</a>
+                </label>
+            </div>
+
+            <button type="submit" id="btn_registrarse" data-i18n="register_button">Registrarse</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="all_rights_reserved">MochilerosXMundo @ 2025. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" title="YouTube" data-i18n-title="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" title="Facebook" data-i18n-title="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="Twitter" data-i18n-title="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram" data-i18n-title="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn" data-i18n-title="linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

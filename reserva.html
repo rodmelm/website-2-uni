@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="reservation">Reserva - MochilerosXMundo</title>
+    <link rel="stylesheet" href="styles/header_styles.css">
+    <link rel="stylesheet" href="styles/reserve_styles.css">
+    <link rel="stylesheet" href="styles/footer_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/reserva.js"></script>
+    <script src="js/translations.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <div id="container_header">
+            <div id="logo">
+                <h2 onclick="document.location='main.html'">MochilerosXMundo</h2>
+            </div>
+            <nav id="links_header">
+                <ul>
+                    <li><a href="buscador.html" data-i18n="search_trips">Buscar viajes</a></li>
+                    <li><a href="otros_rincones.html" data-i18n="other_corners">Otros rincones</a></li>
+                    <li><a href="info.html" data-i18n="information">Información</a></li>
+                </ul>
+            </nav>
+            <div id="seccion_usuario">
+                <button class="icon-btn" onclick="document.location='config.html'" title="Configuración"
+                    data-i18n-title="settings">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <button class="icon-btn" id="btn-perfil" title="Perfil" data-i18n-title="profile">
+                    <i class="fa-regular fa-user"></i>
+                </button>
+                <select name="idioma">
+                    <option value="ES">ES</option>
+                    <option value="EN">EN</option>
+                    <option value="GE">GE</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    <nav id="breadcrumbs" aria-label="breadcrumb">
+        <a href="buscador.html" data-i18n="back_to_search">Buscar viajes</a> &gt;
+        <a href="detalles.html" data-i18n="trip_details">Detalles</a> &gt;
+        <span data-i18n="reservation">Reserva</span>
+    </nav>
+    <div class="container">
+        <main id="main_reserva">
+            <aside id="panel_resumen">
+                <div id="imagen_placeholder">
+                </div>
+                <h1 id="titulo_viaje">Titulo de viaje</h1>
+                <div id="precio_viaje">(precio) €</div>
+            </aside>
+
+            <form id="formulario_reserva">
+                <div class="campo">
+                    <label for="nombre" data-i18n="full_name">Nombre completo</label>
+                    <input type="text" id="nombre" data-i18n-placeholder="placeholder_text" placeholder="Placeholder">
+                </div>
+                <div class="campo">
+                    <label for="email" data-i18n="email_address">Correo electrónico</label>
+                    <input type="email" id="email" data-i18n-placeholder="placeholder_text" placeholder="Placeholder">
+                </div>
+
+                <div class="fila-campos-tres">
+                    <div class="campo">
+                        <label for="acompanantes" data-i18n="companions">Acompañantes:</label>
+                        <select id="acompanantes">
+                            <option data-i18n="none">0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <span class="dropdown-icon">∨</span>
+                    </div>
+                    <div class="campo">
+                        <label for="mascota" data-i18n="pet_type">Tipo de mascota:</label>
+                        <select id="mascota">
+                            <option data-i18n="none_female">Ninguna</option>
+                            <option data-i18n="dog">Perro</option>
+                            <option data-i18n="cat">Gato</option>
+                            <option data-i18n="lovebird">Agaporni</option>
+                            <option data-i18n="other">Otros</option>
+                        </select>
+                        <span class="dropdown-icon">∨</span>
+                    </div>
+                    <div class="campo">
+                        <label for="tamano" data-i18n="pet_size">Tamaño:</label>
+                        <select id="tamano">
+                            <option data-i18n="none">Ninguno</option>
+                            <option data-i18n="medium_pet">Mediano (10-15kg)</option>
+                            <option data-i18n="small_pet">Pequeño (2-5kg)</option>
+                            <option data-i18n="large_pet">Grande (15-20kg)</option>
+                        </select>
+                        <span class="dropdown-icon">∨</span>
+                    </div>
+                </div>
+
+                <!-- Contenedor para campos dinámicos de acompañantes -->
+                <div id="campos_acompanantes"></div>
+
+                <div class="campo">
+                    <label for="modo-pago" data-i18n="payment_method">Modo de pago</label>
+                    <select id="modo-pago">
+                        <option data-i18n="visa">VISA</option>
+                        <option data-i18n="mastercard">MASTERCARD</option>
+                        <option data-i18n="american_express">AMERICAN EXPRESS</option>
+                    </select>
+                    <span class="dropdown-icon">∨</span>
+                </div>
+
+                <div class="campo">
+                    <label for="numero-tarjeta" data-i18n="card_number">Número de tarjeta</label>
+                    <input type="text" id="numero-tarjeta" data-i18n-placeholder="placeholder_text"
+                        placeholder="Placeholder">
+                </div>
+
+                <div class="campo">
+                    <label for="titular" data-i18n="card_holder">Titular de tarjeta</label>
+                    <input type="text" id="titular" data-i18n-placeholder="placeholder_text" placeholder="Placeholder">
+                </div>
+
+                <div class="fila-campos-dos">
+                    <div class="campo">
+                        <label for="fecha-caducidad" data-i18n="expiry_date">Fecha de caducidad</label>
+                        <input type="month" id="fecha-caducidad">
+                    </div>
+                    <div class="campo">
+                        <label for="cvv" data-i18n="cvv">CVV</label>
+                        <input type="text" id="cvv" data-i18n-placeholder="placeholder_text" placeholder="Placeholder">
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="intolerancias" data-i18n="allergies">Intolerancias / alergias:</label>
+                    <textarea id="intolerancias" placeholder="" rows="4"></textarea>
+                </div>
+
+                <button type="submit" id="btn_reservar" onclick="validate_reservation()"
+                    data-i18n="reserve_button">Reservar</button>
+            </form>
+        </main>
+    </div>
+    <footer>
+        <div class="container">
+            <p data-i18n="all_rights_reserved">MochilerosXMundo @ 2025. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" title="YouTube" data-i18n-title="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" title="Facebook" data-i18n-title="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="Twitter" data-i18n-title="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram" data-i18n-title="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn" data-i18n-title="linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Configurar botón de perfil
+        document.addEventListener('DOMContentLoaded', function () {
+            const btnPerfil = document.getElementById('btn-perfil');
+            if (btnPerfil) {
+                btnPerfil.addEventListener('click', function () {
+                    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+                    if (currentUser) {
+                        window.location.href = 'perfil.html';
+                    } else {
+                        window.location.href = 'login.html';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

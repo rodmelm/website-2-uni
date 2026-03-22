@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MochilerosXMundo - Detalles</title>
+    <link rel="stylesheet" href="styles/header_styles.css">
+    <link rel="stylesheet" href="styles/detail_styles.css">
+    <link rel="stylesheet" href="styles/footer_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/auth.js"></script>
+    <script src="js/config.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div id="container_header">
+            <div id="logo">
+                <h2 onclick="document.location='main.html'">MochilerosXMundo</h2>
+            </div>
+            <nav id="links_header">
+                <ul>
+                    <li><a href="buscador.html">Buscar viajes</a></li>
+                    <li><a href="otros_rincones.html">Otros rincones</a></li>
+                    <li><a href="info.html">Información</a></li>
+                </ul>
+            </nav>
+            <div id="seccion_usuario">
+                <button class="icon-btn" onclick="document.location='config.html'"><i
+                        class="fa-solid fa-gear"></i></button>
+                <button class="icon-btn"
+                    onclick="window.location.href = localStorage.getItem('usuario_logueado') ? 'perfil.html' : 'login.html'"><i
+                        class="fa-regular fa-user"></i></button>
+
+                <select name="idioma">
+                    <option value="ES">ES</option>
+                    <option value="EN">EN</option>
+                    <option value="GE">GE</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    <nav id="breadcrumbs" aria-label="breadcrumb">
+        <a href="buscador.html">Buscar viajes</a> &gt; Detalles
+    </nav>
+
+    <main id="main_container">
+
+        <article id="detail_card">
+            <aside id="detail_image">
+            </aside>
+            <aside id="detail_info">
+                <header id="info_header">
+                    <h1 id="trip_title">Titulo de viaje</h1>
+                    <div id="price_tag_group">
+                        <p id="big_price">(precio) €</p>
+                        <p id="tag">Continente</p>
+                    </div>
+                </header>
+                <section id="info_body">
+                    <p id="summary">Descripción detallada del viaje</p>
+                </section>
+                <div id="info_actions">
+                    <button id="btn_opiniones" class="btn btn-outline"
+                        onclick="document.location='opiniones.html'">Opiniones</button>
+                    <div id="right_buttons">
+                        <button id="star_btn" class="btn-icon">
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                        </button>
+                        <button id="btn_reservar" class="btn btn-outline"
+                            onclick="document.location='reserva.html'">Reservar</button>
+                    </div>
+                </div>
+            </aside>
+        </article>
+
+    </main>
+    <footer>
+        <div class="container">
+            <p>MochilerosXMundo @ 2025. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/detalles.js"></script>
+    <script src="js/translations.js" defer></script>
+
+
+</body>
+
+</html>

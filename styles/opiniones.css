@@ -1,0 +1,177 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    padding: 0 20px;
+}
+
+main {
+    flex: 1;
+}
+
+/* Breadcrumb */
+#breadcrumbs {
+    margin: 10px 0 20px 20px;
+    color: #4a5568;
+    font-size: 15px;
+}
+
+#breadcrumbs a {
+    text-decoration: none;
+    color: #4a5568;
+}
+
+#breadcrumbs a:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+/* =========================================
+    ESTILOS ESPECÍFICOS OPINIONES
+   ========================================= */
+
+#opiniones {
+    flex: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.arrow {
+    font-family: monospace;
+}
+
+.pipe {
+    font-weight: lighter;
+    color: #666;
+}
+
+.opinion {
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    margin: 10px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.opinion-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.usuario {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+#deja_opinion {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    max-width: 300px;
+    width: 98%;
+}
+
+#deja_opinion h1 {
+    margin-bottom: 15px;
+}
+
+#enviar_opinion {
+    width: 150px;
+    padding: 10px;
+    background-color: #1e5dd8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+   font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+#enviar_opinion:hover {
+    width: 150px;
+    padding: 10px;
+    background-color: #1a4db8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    align-self: flex-end;
+}
+
+#usuario_opinion {
+    width: 100%;
+    flex-grow: 1;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+    height: auto;
+    min-height: 300px;
+    font-family: inherit;
+}
+
+#cuadricula_principal {
+    display: flex;
+    align-items: flex-start;
+    /* CAMBIO: Usamos 'auto' para que cada fila mida lo que necesite su contenido.
+       Esto permite hacer scroll si la pantalla es pequeña y empuja el footer abajo. */
+    gap: 40px;
+    /* Un poco más de aire entre secciones */
+    padding-bottom: 40px;
+    /* Espacio antes del footer */
+    width: 100%;
+    max-width: 1200px;
+    /* Para que no se desparrame en pantallas 4k */
+    height: auto;
+    margin: 0 auto;
+    /* Centrar el main */
+}
+
+/* Responsive*/
+@media (max-width: 900px) {
+    #cuadricula_principal {
+        flex-direction: column-reverse;
+    }
+    #usuario_opinion {
+        min-height: 100px;
+        width: 100%;
+    }
+    #deja_opinion {
+        max-width: none;
+    }
+}
+
+@media (max-width: 600px) {
+    #opiniones {
+        grid-template-columns: 1fr;
+    }
+    #enviar_opinion {
+        width: 100%;
+    }
+}

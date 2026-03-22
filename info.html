@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="information">Información - MochilerosXMundo</title>
+    <link rel="stylesheet" href="styles/header_styles.css">
+    <link rel="stylesheet" href="styles/info_styles.css">
+    <link rel="stylesheet" href="styles/footer_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/auth.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/translations.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div id="container_header">
+            <div id="logo">
+                <h2 onclick="document.location='main.html'">MochilerosXMundo</h2>
+            </div>
+            <nav id="links_header">
+                <ul>
+                    <li><a href="buscador.html" data-i18n="search_trips">Buscar viajes</a></li>
+                    <li><a href="otros_rincones.html" data-i18n="other_corners">Otros rincones</a></li>
+                    <li><a href="info.html" data-i18n="information">Información</a></li>
+                </ul>
+            </nav>
+            <div id="seccion_usuario">
+                <button class="icon-btn" onclick="document.location='config.html'" title="Configuración"
+                    data-i18n-title="settings">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <button class="icon-btn" id="btn-perfil" title="Perfil" data-i18n-title="profile">
+                    <i class="fa-regular fa-user"></i>
+                </button>
+
+                <select name="idioma">
+                    <option value="ES">ES</option>
+                    <option value="EN">EN</option>
+                    <option value="GE">GE</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    <nav id="breadcrumbs" aria-label="breadcrumb" data-i18n="information">
+        Información
+    </nav>
+    <main class="container">
+        <h1 id="page_title" data-i18n="information">Información</h1>
+        <section id="secciones_informacion">
+            <div id="acordeon">
+                <article id="acordeon_item_1" class="acordeon-item activo">
+                    <header class="acordeon-header">
+                        <div class="acordeon-titulo">
+                            <span>→</span> <span data-i18n="about_us">Sobre nosotros</span>
+                        </div>
+                        <div class="flecha">▶</div>
+                    </header>
+                    <div class="acordeon-contenido">
+                        <div class="acordeon-texto">
+                            <p data-i18n="about_us_text_1">MochilerosXMundo es una plataforma creada por y para viajeros
+                                apasionados. Nuestra misión es conectar a aventureros de todo el mundo con experiencias
+                                únicas y auténticas que van más allá del turismo convencional.</p>
+                            <p data-i18n="about_us_text_2">Fundada en 2018 por un grupo de amigos mochileros, nuestra
+                                web ha crecido hasta convertirse en una comunidad global donde miles de viajeros
+                                comparten sus rutas, descubrimientos y consejos para explorar el mundo de forma
+                                responsable y enriquecedora.</p>
+                            <p data-i18n="about_us_text_3">Creemos en el poder transformador de los viajes y en la
+                                importancia de conocer otras culturas, por lo que promovemos un turismo sostenible que
+                                beneficie tanto a los viajeros como a las comunidades locales.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="acordeon_item_2" class="acordeon-item">
+                    <header class="acordeon-header">
+                        <div class="acordeon-titulo">
+                            <span>→</span> <span data-i18n="contact_us">Contacta con nosotros</span>
+                        </div>
+                        <div class="flecha">▶</div>
+                    </header>
+                    <div class="acordeon-contenido">
+                        <div class="acordeon-texto">
+                            <p data-i18n="contact_us_text">Estamos aquí para ayudarte en todo lo que necesites para
+                                planificar tu próxima aventura. No dudes en contactarnos:</p>
+                            <div id="info_contacto">
+                                <div class="contacto-item">
+                                    <span class="contacto-label" data-i18n="phone">Teléfono:</span>
+                                    <span class="contacto-valor">000 000 000</span>
+                                </div>
+                                <div class="contacto-item">
+                                    <span class="contacto-label" data-i18n="email_contact">Correo:</span>
+                                    <span class="contacto-valor">mochilerosxmundo@info.com</span>
+                                </div>
+                            </div>
+                            <p style="margin-top: 15px;" data-i18n="business_hours">Nuestro horario de atención es de
+                                lunes a viernes de 9:00 a 18:00 horas.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="all_rights_reserved">MochilerosXMundo @ 2025. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" title="YouTube" data-i18n-title="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" title="Facebook" data-i18n-title="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="Twitter" data-i18n-title="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram" data-i18n-title="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn" data-i18n-title="linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Configurar botón de perfil
+        document.addEventListener('DOMContentLoaded', function () {
+            const btnPerfil = document.getElementById('btn-perfil');
+            if (btnPerfil) {
+                btnPerfil.addEventListener('click', function () {
+                    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+                    if (currentUser) {
+                        window.location.href = 'perfil.html';
+                    } else {
+                        window.location.href = 'login.html';
+                    }
+                });
+            }
+
+            // Funcionalidad del acordeón
+            document.querySelectorAll('.acordeon-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const item = header.parentElement;
+                    const estaActivo = item.classList.contains('activo');
+
+                    // Cerrar todos los items
+                    document.querySelectorAll('.acordeon-item').forEach(i => {
+                        i.classList.remove('activo');
+                    });
+
+                    // Abrir el item clickeado si no estaba activo
+                    if (!estaActivo) {
+                        item.classList.add('activo');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

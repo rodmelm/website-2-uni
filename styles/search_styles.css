@@ -1,0 +1,235 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    padding: 0 20px;
+}
+
+main {
+    flex: 1;
+}
+
+/* Breadcrumb */
+#breadcrumbs {
+    margin: 10px 0 20px 20px;
+    color: #4a5568;
+    font-size: 15px;
+}
+
+#breadcrumbs p {
+    margin: 0;
+}
+
+/* Lista de viajes */
+#page_title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #2d3748;
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#page_title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 2px;
+}
+
+#viajes_lista {
+    margin: 30px 0;
+}
+
+/* =========================================
+   PANEL DE FILTROS 
+   ========================================= */
+
+#filtros_busqueda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+    padding: 10px 0;
+}
+
+/* Contenedor para cada filtro (label + select) */
+.filtro-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Label del filtro */
+#filtros_busqueda label {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 0.95rem;
+}
+
+/* Estilos del select de filtros */
+#filtros_busqueda select {
+    padding: 14px 20px;
+    padding-right: 45px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    background-color: white;
+    color: #4a5568;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%234a5568' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#filtros_busqueda select:hover {
+    border-color: #3498db;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+#filtros_busqueda select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+#filtros_busqueda select option {
+    padding: 12px;
+    font-size: 0.95rem;
+}
+
+article.viaje {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #e2e8f0;
+    position: relative; 
+    overflow: hidden;
+}
+article.viaje::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: #3498db;
+}
+article.viaje:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-color: #3498db;
+}
+div.viaje {
+    display: flex !important;
+    flex-direction: row;
+    flex: 1;
+}
+
+.viaje-imagen {
+    width: 240px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.viaje-descripcion {
+    flex: 1;
+}
+
+h2.viaje-descripcion {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+p.viaje-descripcion {
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.7;
+    font-size: 18px;
+}
+
+.viaje-detalles {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.precio {
+    font-size: 20px;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+.continente {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    background: linear-gradient(135deg, #e8f4fc 0%, #d4e9ff 100%);
+    color: #1a5a8a;
+    border: 1px solid #b3d9ff;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    #filtros_busqueda {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    article.viaje {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    .viaje-imagen {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}

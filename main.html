@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="prepare_next_adventure">MochilerosXMundo</title>
+    <link rel="stylesheet" href="styles/header_styles.css">
+    <link rel="stylesheet" href="styles/footer_styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/auth.js"></script>
+    <script src="js/translations.js" defer></script>
+    <script src="js/config.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div id="container_header">
+            <div id="logo">
+                <h2 onclick="document.location='main.html'">MochilerosXMundo</h2>
+            </div>
+            <nav id="links_header">
+                <ul>
+                    <li><a href="buscador.html" data-i18n="search_trips">Buscar viajes</a></li>
+                    <li><a href="otros_rincones.html" data-i18n="other_corners">Otros rincones</a></li>
+                    <li><a href="info.html" data-i18n="information">Información</a></li>
+                </ul>
+            </nav>
+            <div id="seccion_usuario">
+                <button class="icon-btn" onclick="document.location='config.html'" title="Configuración"
+                    data-i18n-title="settings">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <button class="icon-btn" id="btn-perfil" title="Perfil" data-i18n-title="profile">
+                    <i class="fa-regular fa-user"></i>
+                </button>
+
+                <select name="idioma">
+                    <option value="ES">ES</option>
+                    <option value="EN">EN</option>
+                    <option value="GE">GE</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main id="cuadricula_principal">
+        <section id="next_adventure">
+            <h2 data-i18n="prepare_next_adventure">Prepara tu próxima aventura</h2>
+        </section>
+        <section id="opiniones">
+            <h3 data-i18n="recent_reviews" style="margin-bottom: 20px; color: #333;">Opiniones recientes</h3>
+            <aside id="opinion-1" class="opinion">
+                <div id="opinion-header-1" class="opinion-header">
+                    <span class="usuario" data-i18n="user">Usuario</span>
+                    <span class="fecha" data-i18n="first_recent_opinion">Primera opinión más reciente</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua.</p>
+            </aside>
+
+            <aside id="opinion-2" class="opinion">
+                <div id="opinion-header-2" class="opinion-header">
+                    <span class="usuario" data-i18n="user">Usuario</span>
+                    <span class="fecha" data-i18n="second_recent_opinion">Segunda opinión más reciente</span>
+                </div>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.</p>
+            </aside>
+
+            <aside id="opinion-3" class="opinion">
+                <div id="opinion-header-3" class="opinion-header">
+                    <span class="usuario" data-i18n="user">Usuario</span>
+                    <span class="fecha" data-i18n="third_recent_opinion">Tercera opinión más reciente</span>
+                </div>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur.</p>
+            </aside>
+        </section>
+
+        <section id="seccion_carrusel">
+            <h2 data-i18n="looking_inspiration">¿Buscas inspiración? Viajes destacados:</h2>
+            <div id="carrusel_container">
+                <button type="button" id="carrusel_btn_prev" class="carrusel-btn">◄</button>
+                <!--Botón izquierdo del carrusel-->
+
+                <aside id="carrusel">
+
+                    <div id="carrusel_track">
+                        <article id="carrusel_item_1" class="carrusel-item first">
+                            <div class="carrusel-content">
+                                <h3>Aventura en los Andes Peruanos</h3>
+                                <button class="btn">Ver más</button>
+                            </div>
+
+                        </article>
+
+                        <article id="carrusel_item_2" class="carrusel-item second">
+                            <div class="carrusel-content">
+                                <h3>Explorando el Sudeste Asiático</h3>
+                                <button class="btn">Ver más</button>
+                            </div>
+
+                        </article>
+
+                        <article id="carrusel_item_3" class="carrusel-item third">
+                            <div class="carrusel-content">
+                                <h3>Safari por la Sabana Africana</h3>
+                                <button class="btn">Ver más</button>
+                            </div>
+
+                        </article>
+
+                        <article id="carrusel_item_4" class="carrusel-item fourth">
+                            <div class="carrusel-content">
+                                <h3>Ruta por Europa Central</h3>
+                                <button class="btn">Ver más</button>
+                            </div>
+
+                        </article>
+                    </div>
+                </aside>
+
+                <button type="button" id="carrusel_btn_next" class="carrusel-btn">►</button>
+                <!--Botón derecho del carrusel-->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="all_rights_reserved">MochilerosXMundo @ 2025. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" title="YouTube" data-i18n-title="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" title="Facebook" data-i18n-title="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="Twitter" data-i18n-title="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram" data-i18n-title="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn" data-i18n-title="linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Configurar botón de perfil
+        document.addEventListener('DOMContentLoaded', function () {
+            const btnPerfil = document.getElementById('btn-perfil');
+            if (btnPerfil) {
+                btnPerfil.addEventListener('click', function () {
+                    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+                    if (currentUser) {
+                        window.location.href = 'perfil.html';
+                    } else {
+                        window.location.href = 'login.html';
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

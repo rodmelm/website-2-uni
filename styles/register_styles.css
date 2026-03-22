@@ -1,0 +1,332 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f0f4f8 0%, #e8eef5 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Breadcrumb */
+#breadcrumb {
+    padding: 20px 40px;
+    font-size: 0.95em;
+    color: #666;
+}
+
+#breadcrumb ol {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+#breadcrumb li {
+    display: flex;
+    align-items: center;
+}
+
+#breadcrumb li::before {
+    content: '> ';
+    margin-right: 8px;
+}
+
+#breadcrumb li:first-child::before {
+    content: '';
+}
+
+/* Main register */
+#main_register {
+    padding-top: 10px !important;
+    flex: 1;
+    padding: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Formulario de registro */
+.formulario-registro {
+    background: white;
+    padding: 60px 80px;
+    border-radius: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+}
+
+.titulo-registro {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.95em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95em;
+    background-color: #f9fafb;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #3182ce;
+    background-color: #fff;
+}
+
+/* Filas de dos columnas */
+.form_row_tres {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 40px;
+    margin-bottom: 0;
+}
+
+.form_row_tres .campo {
+    margin-bottom: 30px;
+}
+
+#btn_registrarse {
+    display: block;
+    background-color: #1e5dd8;
+    color: white;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 150px;
+    height: auto;
+    justify-self: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#btn_registrarse:hover {
+    background-color: #1a4db8;
+}
+
+/* Filas de dos columnas */
+.form_row_dos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 0;
+}
+
+.form_row_dos .campo {
+    margin-bottom: 30px;
+}
+
+#fecha_nacimiento {
+    width: 100%;
+    height: 55%;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    font-size: 0.95em;
+    background-color: #f9fafb;
+    transition: border-color 0.3s;
+}
+
+/* Custom file upload */
+.custom-file-upload {
+    display: flex;
+    align-items: center;
+}
+
+#img_perfil {
+    display: none;
+}
+
+#boton_personalizado {
+    display: inline-block;
+    padding: 12px 15px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    color: #333;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    width: 100%;
+    text-align: center;
+}
+
+#boton_personalizado:hover {
+    background-color: #d0d0d0;
+}
+
+.texto_label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Checkbox términos */
+.checkbox_grupo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.checkbox_grupo input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox_grupo label {
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 0.95em;
+}
+
+.checkbox_grupo a {
+    color: #1e5dd8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.checkbox_grupo a:hover {
+    text-decoration: underline;
+}
+
+.btn-login {
+    display: block;
+    background-color: #3498db;
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+.btn-login:hover {
+    background-color: #2980b9;
+}
+
+/* Footer */
+footer {
+    background-color: #556578;
+    color: white;
+    padding: 30px;
+    margin-top: auto;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.95em;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #3182ce;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #formulario_registro {
+        padding: 40px 30px;
+    }
+
+    .form_row_dos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    footer .container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #main_register {
+        padding: 20px;
+    }
+
+    #formulario_registro {
+        padding: 30px 20px;
+    }
+}
+
+/* Mensajes de error */
+.mensaje-error {
+    color: #e74c3c;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none;
+}
+
+.campo.error input {
+    border-color: #e74c3c;
+}
+
+.campo.error .mensaje-error {
+    display: block;
+}

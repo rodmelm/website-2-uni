@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="reviews">MochilerosXMundo</title>
+    <link rel="stylesheet" href="styles/header_styles.css">
+    <link rel="stylesheet" href="styles/footer_styles.css">
+    <link rel="stylesheet" href="styles/opiniones.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/config.js"></script>
+    <script src="js/translations.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div id="container_header">
+            <div id="logo">
+                <h2 onclick="document.location='main.html'">MochilerosXMundo</h2>
+            </div>
+            <nav id="links_header">
+                <ul>
+                    <li><a href="buscador.html" data-i18n="search_trips">Buscar viajes</a></li>
+                    <li><a href="otros_rincones.html" data-i18n="other_corners">Otros rincones</a></li>
+                    <li><a href="info.html" data-i18n="information">Información</a></li>
+                </ul>
+            </nav>
+            <div id="seccion_usuario">
+                <button class="icon-btn" onclick="document.location='config.html'" title="Configuración"
+                    data-i18n-title="settings">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <button class="icon-btn" onclick="document.location='login.html'" title="Iniciar sesión"
+                    data-i18n-title="login">
+                    <i class="fa-regular fa-user"></i>
+                </button>
+
+                <select name="idioma">
+                    <option value="ES">ES</option>
+                    <option value="EN">EN</option>
+                    <option value="GE">GE</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    <nav id="breadcrumbs" aria-label="breadcrumb">
+        <a href="buscador.html" data-i18n="back_to_search">Buscar viajes</a> &gt;
+        <a href="detalles.html" data-i18n="trip_details">Detalles</a> &gt;
+        <span data-i18n="reviews">Opiniones</span>
+    </nav>
+
+    <main id="cuadricula_principal">
+        <section id="opiniones">
+            <!-- Las opiniones se cargarán dinámicamente via JavaScript -->
+        </section>
+        <aside id="deja_opinion">
+            <h1><span class="arrow">&rarr;</span> <span class="pipe">|</span>Deja tu opinión</h1>
+            <form id="form_opinion">
+                <div id="error_opinion"></div>
+                <textarea id="usuario_opinion" placeholder="Escribe tu opinión aquí." rows="5"
+                    maxlength="500"></textarea>
+                <button id="enviar_opinion" type="submit">Enviar opinión</button>
+            </form>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="all_rights_reserved">MochilerosXMundo @ 2025. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" title="YouTube" data-i18n-title="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" title="Facebook" data-i18n-title="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="Twitter" data-i18n-title="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram" data-i18n-title="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn" data-i18n-title="linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/opiniones.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

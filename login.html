@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="login">Login - MochilerosXMundo</title>
+    <link rel="stylesheet" href="styles/header_styles.css">
+    <link rel="stylesheet" href="styles/login_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/config.js"></script>
+    <script src="js/translations.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div id="container_header">
+            <div id="logo">
+                <h2 onclick="window.location.href='main.html'">MochilerosXMundo</h2>
+            </div>
+            <nav id="links_header">
+                <ul>
+                    <li><a href="buscador.html" data-i18n="search_trips">Buscar viajes</a></li>
+                    <li><a href="otros_rincones.html" data-i18n="other_corners">Otros rincones</a></li>
+                    <li><a href="info.html" data-i18n="information">Información</a></li>
+                </ul>
+            </nav>
+            <div id="seccion_usuario">
+                <button class="icon-btn" onclick="window.location.href='config.html'" title="Configuración"
+                    data-i18n-title="settings">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <button class="icon-btn" id="header-user-btn" title="Perfil" data-i18n-title="profile">
+                    <i class="fa-regular fa-user"></i>
+                </button>
+                <select name="idioma">
+                    <option value="ES">ES</option>
+                    <option value="EN">EN</option>
+                    <option value="GE">GE</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <nav id="breadcrumb">
+        <ol>
+            <li aria-current="page" data-i18n="login">Inicio de sesión</li>
+        </ol>
+    </nav>
+
+    <main id="main_login">
+        <div id="login_container">
+            <form id="login_form">
+                <h2 data-i18n="login_title">Iniciar Sesión</h2>
+
+                <div class="login_row">
+                    <div class="campo">
+                        <label for="usuario" data-i18n="username_required">Nombre de usuario *</label>
+                        <input type="text" id="usuario" data-i18n-placeholder="username_hint"
+                            placeholder="Ej: juanperez" required>
+                        <small data-i18n="username_hint">Usa el nombre de usuario que creaste al registrarte</small>
+                    </div>
+                    <div class="campo">
+                        <label for="password" data-i18n="password_required">Contraseña *</label>
+                        <input type="password" id="password" data-i18n-placeholder="password_hint"
+                            placeholder="Tu contraseña" required>
+                        <small data-i18n="password_hint">La contraseña es sensible a mayúsculas/minúsculas</small>
+                    </div>
+                </div>
+
+                <div class="campo checkbox">
+                    <input type="checkbox" id="guardar_credenciales">
+                    <label for="guardar_credenciales" data-i18n="remember_me">Recordar mi usuario</label>
+                </div>
+
+                <button type="submit" id="btn_login" class="btn-primary" data-i18n="login_button">
+                    <i class="fas fa-sign-in-alt"></i> Iniciar sesión
+                </button>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <p><span data-i18n="no_account">¿No tienes una cuenta?</span> <a href="register.html"
+                            data-i18n="register_here">Regístrate aquí</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="all_rights_reserved">MochilerosXMundo @ 2025. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" title="YouTube" data-i18n-title="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" title="Facebook" data-i18n-title="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="Twitter" data-i18n-title="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram" data-i18n-title="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn" data-i18n-title="linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/login.js"></script>
+
+    <!-- Script para el header -->
+    <script>
+        // Configurar botón de usuario en el header
+        document.addEventListener('DOMContentLoaded', function () {
+            const userBtn = document.getElementById('header-user-btn');
+            if (userBtn) {
+                userBtn.addEventListener('click', function () {
+                    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+                    if (currentUser) {
+                        window.location.href = 'perfil.html';
+                    } else {
+                        window.location.href = 'login.html';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

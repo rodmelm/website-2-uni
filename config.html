@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="settings_title">Configuración - MochilerosXMundo</title>
+    <link rel="stylesheet" href="styles/header_styles.css">
+    <link rel="stylesheet" href="styles/config_styles.css">
+    <link rel="stylesheet" href="styles/footer_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/auth.js"></script>
+    <script src="js/translations.js" defer></script>
+    <script src="js/config.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div id="container_header">
+            <div id="logo">
+                <h2 onclick="document.location='main.html'">MochilerosXMundo</h2>
+            </div>
+            <nav id="links_header">
+                <ul>
+                    <li><a href="buscador.html" data-i18n="search_trips">Buscar viajes</a></li>
+                    <li><a href="otros_rincones.html" data-i18n="other_corners">Otros rincones</a></li>
+                    <li><a href="info.html" data-i18n="information">Información</a></li>
+                </ul>
+            </nav>
+            <div id="seccion_usuario">
+                <button class="icon-btn" onclick="document.location='config.html'" title="Configuración"
+                    data-i18n-title="settings">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <button class="icon-btn" id="btn-perfil" title="Perfil" data-i18n-title="profile">
+                    <i class="fa-regular fa-user"></i>
+                </button>
+
+                <select name="idioma">
+                    <option value="ES">ES</option>
+                    <option value="EN">EN</option>
+                    <option value="GE">GE</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <nav id="breadcrumbs" aria-label="breadcrumb" data-i18n="settings_title">
+        Configuración
+    </nav>
+
+    <main class="container">
+        <div class="panel-configuracion">
+            <h1 class="titulo-configuracion" data-i18n="settings_title">Configuración</h1>
+
+            <div class="config-section">
+                <h2><i class="fas fa-universal-access"></i> <span data-i18n="accessibility">Accesibilidad</span></h2>
+
+                <div class="opcion-config">
+                    <div class="opcion-principal">
+                        <input type="checkbox" id="accesibilidad" class="checkbox-grande">
+                        <label for="accesibilidad" class="opcion-label">
+                            <i class="fas fa-wheelchair"></i>
+                            <span data-i18n="enable_accessibility">Activar opciones de accesibilidad</span>
+                        </label>
+                    </div>
+
+                    <div class="subopciones">
+                        <div class="subopcion">
+                            <input type="checkbox" id="modo-daltonico" class="checkbox-pequeno">
+                            <label for="modo-daltonico" class="subopcion-label">
+                                <i class="fas fa-eye"></i>
+                                <span data-i18n="colorblind_mode">Modo daltónico</span>
+                            </label>
+                            <p class="subopcion-desc" data-i18n="colorblind_desc">Ajusta los colores para mayor
+                                visibilidad</p>
+                        </div>
+
+                        <div class="subopcion">
+                            <div class="subopcion-header">
+                                <i class="fas fa-font"></i>
+                                <label for="tamano-fuente" class="subopcion-label" data-i18n="font_size">Tamaño de
+                                    texto</label>
+                            </div>
+                            <div class="selector-tamano">
+                                <select id="tamano-fuente">
+                                    <option value="75%" data-i18n="very_small">Muy pequeño</option>
+                                    <option value="90%" data-i18n="small">Pequeño</option>
+                                    <option value="100%" data-i18n="normal">Normal</option>
+                                    <option value="110%" data-i18n="large">Grande</option>
+                                    <option value="125%" data-i18n="very_large">Muy grande</option>
+                                    <option value="150%" data-i18n="extra_large">Extra grande</option>
+                                </select>
+                                <span class="porcentaje" data-i18n="font_current" data-i18n-params='{"size": "100%"}'>
+                                    (Tamaño actual: 100%)
+                                </span>
+                            </div>
+                            <p class="subopcion-desc" data-i18n="font_desc">Este cambio se aplicará a todas las páginas
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="config-acciones">
+                <button id="btn-restaurar" class="btn-config btn-secundario">
+                    <i class="fas fa-undo"></i>
+                    <span data-i18n="restore_defaults">Restaurar valores por defecto</span>
+                </button>
+            </div>
+
+            <div id="mensaje-config" class="mensaje-config" style="display: none;"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>MochilerosXMundo @ 2025. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Configurar botón de perfil
+        document.addEventListener('DOMContentLoaded', function () {
+            const btnPerfil = document.querySelector('#btn-perfil');
+            if (btnPerfil) {
+                btnPerfil.addEventListener('click', function () {
+                    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+                    if (currentUser) {
+                        window.location.href = 'perfil.html';
+                    } else {
+                        window.location.href = 'login.html';
+                    }
+                });
+            }
+
+            // Actualizar el porcentaje de tamaño de fuente dinámicamente
+            function actualizarTextoPorcentaje(tamano) {
+                const porcentajeElement = document.querySelector('.porcentaje');
+                if (porcentajeElement) {
+                    // Actualizar el atributo data-i18n-params para la traducción dinámica
+                    porcentajeElement.setAttribute('data-i18n-params', JSON.stringify({ size: tamano }));
+
+                    // Forzar actualización de traducción
+                    if (window.translations) {
+                        const texto = window.translations.t('font_current', { size: tamano });
+                        porcentajeElement.textContent = texto;
+                    }
+                }
+            }
+
+            // Escuchar cambios en el selector de tamaño de fuente
+            const selectorTamano = document.getElementById('tamano-fuente');
+            if (selectorTamano) {
+                selectorTamano.addEventListener('change', function () {
+                    actualizarTextoPorcentaje(this.value);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

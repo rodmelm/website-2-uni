@@ -1,0 +1,177 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Migas de pan */
+#breadcrumbs {
+    margin: 10px 0 20px 20px;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+#breadcrumbs p {
+    margin: 0;
+}
+
+/* Contenido principal */
+#page_title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #2d3748;
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#page_title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 2px;
+}
+
+.container main {
+    flex: 1;
+    padding: 20px 0;
+}
+
+#secciones_informacion {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Acordeón */
+#acordeon {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+article.acordeon-item {
+    border-bottom: 1px solid #eee;
+}
+
+article.acordeon-item:last-child {
+    border-bottom: none;
+}
+
+.acordeon-header {
+    padding: 20px 25px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.acordeon-header:hover {
+    background-color: #e9ecef;
+}
+
+.acordeon-titulo {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.flecha {
+    font-size: 1.2em;
+    transition: transform 0.3s;
+}
+
+.acordeon-contenido {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.acordeon-item.activo .acordeon-contenido {
+    padding: 0 25px 25px 25px;
+    max-height: 500px;
+}
+
+.acordeon-item.activo .flecha {
+    transform: rotate(90deg);
+}
+
+.acordeon-texto {
+    color: #555;
+    line-height: 1.7;
+}
+
+#info_contacto {
+    margin-top: 15px;
+}
+
+.contacto-item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contacto-label {
+    font-weight: 600;
+    color: #2c3e50;
+    min-width: 80px;
+}
+
+.contacto-valor {
+    color: #3498db;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .acordeon-header {
+        padding: 15px 20px;
+    }
+
+    .acordeon-contenido {
+        padding: 0 20px;
+    }
+
+    .acordeon-item.activo .acordeon-contenido {
+        padding: 0 20px 20px 20px;
+    }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="user_profile">Perfil de Usuario - MochilerosXMundo</title>
+    <link rel="stylesheet" href="styles/header_styles.css">
+    <link rel="stylesheet" href="styles/profile_styles.css">
+    <link rel="stylesheet" href="styles/footer_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/auth.js"></script>
+    <script src="js/perfil.js" defer></script>
+    <script src="js/config.js"></script>
+    <script src="js/translations.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div id="container_header">
+            <div id="logo">
+                <h2 onclick="document.location='main.html'">MochilerosXMundo</h2>
+            </div>
+            <nav id="links_header">
+                <ul>
+                    <li><a href="buscador.html" data-i18n="search_trips">Buscar viajes</a></li>
+                    <li><a href="otros_rincones.html" data-i18n="other_corners">Otros rincones</a></li>
+                    <li><a href="info.html" data-i18n="information">Información</a></li>
+                </ul>
+            </nav>
+            <div id="seccion_usuario">
+                <button class="icon-btn" onclick="document.location='config.html'" title="Configuración"
+                    data-i18n-title="settings">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <button class="icon-btn" onclick="document.location='perfil.html'" title="Perfil"
+                    data-i18n-title="profile">
+                    <i class="fa-regular fa-user"></i>
+                </button>
+
+                <select name="idioma">
+                    <option value="ES">ES</option>
+                    <option value="EN">EN</option>
+                    <option value="GE">GE</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <hr>
+
+        <main id="main_perfil">
+            <aside id="panel_perfil">
+                <div id="avatar"></div>
+                <h1 id="nombre_usuario">María González</h1>
+                <p id="email_usuario">maria.gonzalez@email.com</p>
+
+                <section id="seccion_sobre_mi">
+                    <h3 data-i18n="about_me">Sobre mí:</h3>
+                    <p id="about_me" data-i18n="passionate_traveler">Apasionada viajera con más de 15 países visitados.
+                        Me encanta explorar culturas diferentes, probar comida local y conocer gente nueva en cada
+                        destino. Mi lema es "viajar es vivir dos veces".</p>
+                </section>
+
+                <div id="acciones_perfil">
+                    <button id="btn_editar" class="btn btn-editar" data-i18n="edit_profile">Editar Perfil</button>
+                    <button id="btn_cierre" class="btn btn-config" onclick="close_session()"
+                        data-i18n="close_session">Cerrar Sesión</button>
+                    <button id="btn_config" class="btn btn-config" data-i18n="profile_settings">Configuración</button>
+                </div>
+            </aside>
+
+            <section id="proximo_viaje">
+                <h2 id="titulo_seccion" data-i18n="my_next_trip">Mi próximo viaje:</h2>
+
+                <div id="lista_viajes_container">
+                    <!-- Los viajes se cargarán aquí dinámicamente -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="all_rights_reserved">MochilerosXMundo @ 2025. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" title="YouTube" data-i18n-title="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" title="Facebook" data-i18n-title="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="Twitter" data-i18n-title="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram" data-i18n-title="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn" data-i18n-title="linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

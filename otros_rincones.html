@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="world_cities">MochilerosXMundo - Ciudades del Mundo</title>
+    <link rel="stylesheet" href="styles/header_styles.css">
+    <link rel="stylesheet" href="styles/otros_rinc.css">
+    <link rel="stylesheet" href="styles/footer_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/other_places.js" defer></script>
+    <script src="js/auth.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/translations.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div id="container_header">
+            <div id="logo">
+                <h2 onclick="document.location='main.html'">MochilerosXMundo</h2>
+            </div>
+            <nav id="links_header">
+                <ul>
+                    <li><a href="buscador.html" data-i18n="search_trips">Buscar viajes</a></li>
+                    <li><a href="otros_rincones.html" class="active" data-i18n="other_corners">Otros rincones</a></li>
+                    <li><a href="info.html" data-i18n="information">Información</a></li>
+                </ul>
+            </nav>
+            <div id="seccion_usuario">
+                <button class="icon-btn" onclick="document.location='config.html'" title="Configuración"
+                    data-i18n-title="settings">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <button class="icon-btn" id="btn-perfil" title="Perfil" data-i18n-title="profile">
+                    <i class="fa-regular fa-user"></i>
+                </button>
+                <select name="idioma">
+                    <option value="ES">ES</option>
+                    <option value="EN">EN</option>
+                    <option value="GE">GE</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <nav id="breadcrumbs" aria-label="breadcrumb" data-i18n="other_corners">
+        Otros rincones
+    </nav>
+
+    <main id="main_otros_rincones" class="container">
+        <h1 id="page_title" data-i18n="world_cities">Ciudades del Mundo</h1>
+
+        <!-- Panel de Filtros y Búsqueda -->
+        <section id="panel-filtros">
+            <div class="filtros-container">
+                <!-- Barra de búsqueda -->
+                <div class="filtro-grupo">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="buscador-ciudades" data-i18n-placeholder="search_city"
+                        placeholder="Buscar ciudad, país o continente..." class="input-busqueda">
+                </div>
+
+                <!-- Filtro de continentes -->
+                <div class="filtro-grupo">
+                    <label for="filtro-continente"><i class="fas fa-globe-americas"></i> <span
+                            data-i18n="continent">Continente:</span></label>
+                    <select id="filtro-continente" class="select-filtro">
+                        <option value="todos" data-i18n="all_continents">Todos los continentes</option>
+                        <option value="Europa" data-i18n="europe">Europa</option>
+                        <option value="Asia" data-i18n="asia">Asia</option>
+                        <option value="América del Norte" data-i18n="north_america">América del Norte</option>
+                        <option value="América del Sur" data-i18n="south_america">América del Sur</option>
+                        <option value="África" data-i18n="africa">África</option>
+                        <option value="Oceanía" data-i18n="oceania">Oceanía</option>
+                    </select>
+                </div>
+
+                <!-- Filtro de países (se llenará dinámicamente) -->
+                <div class="filtro-grupo">
+                    <label for="filtro-pais"><i class="fas fa-flag"></i> <span
+                            data-i18n="countries">País:</span></label>
+                    <select id="filtro-pais" class="select-filtro">
+                        <option value="todos" data-i18n="all_countries">Todos los países</option>
+                    </select>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="filtro-acciones">
+                    <button id="btn-aplicar-filtros" class="btn-filtro" data-i18n="apply_filters">
+                        <i class="fas fa-filter"></i> Aplicar filtros
+                    </button>
+                    <button id="btn-limpiar-filtros" class="btn-filtro btn-secundario" data-i18n="clear_filters">
+                        <i class="fas fa-times"></i> Limpiar filtros
+                    </button>
+                </div>
+            </div>
+
+            <!-- Estadísticas -->
+            <div id="estadisticas" class="estadisticas-container">
+                <div class="estadistica">
+                    <span class="estadistica-numero" id="total-ciudades">0</span>
+                    <span class="estadistica-texto" data-i18n="cities">Ciudades</span>
+                </div>
+                <div class="estadistica">
+                    <span class="estadistica-numero" id="total-paises">0</span>
+                    <span class="estadistica-texto" data-i18n="countries">Países</span>
+                </div>
+                <div class="estadistica">
+                    <span class="estadistica-numero" id="total-continentes">0</span>
+                    <span class="estadistica-texto" data-i18n="continents">Continentes</span>
+                </div>
+            </div>
+
+        <!-- Mensaje cuando no hay resultados -->
+        <div id="sin-resultados" style="display: none; text-align: center; padding: 40px; color: #666;">
+            <i class="fas fa-search" style="font-size: 48px; margin-bottom: 20px;"></i>
+            <h3 data-i18n="no_results">No se encontraron resultados</h3>
+            <p data-i18n="no_results_hint">Intenta con otros términos de búsqueda o ajusta los filtros.</p>
+        </div>
+
+        <!-- Contenedor donde se mostrarán las ciudades -->
+        <div id="ciudades-container">
+            <!-- Las ciudades se cargarán aquí dinámicamente -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="all_rights_reserved">MochilerosXMundo @ 2025. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" title="YouTube" data-i18n-title="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" title="Facebook" data-i18n-title="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="Twitter" data-i18n-title="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram" data-i18n-title="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn" data-i18n-title="linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Configurar botón de perfil
+        document.addEventListener('DOMContentLoaded', function () {
+            const btnPerfil = document.getElementById('btn-perfil');
+            if (btnPerfil) {
+                btnPerfil.addEventListener('click', function () {
+                    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+                    if (currentUser) {
+                        window.location.href = 'perfil.html';
+                    } else {
+                        window.location.href = 'login.html';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,348 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    padding: 0 20px;
+}
+
+main {
+    flex: 1;
+}
+
+/* =========================================
+    CUADRICULA PRINCIPAL
+   ========================================= */
+#cuadricula_principal {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 40px;
+    padding-bottom: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#next_adventure {
+    background-image: url('../media/tipos-de-viajeros.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+    margin: 20px;
+    border-radius: 30px;
+    min-height: 50vh;
+}
+
+#next_adventure h2 {
+    color: rgba(255, 255, 255, 0.781);
+    font-size: 44px;
+    margin: 0;
+    transition: color 0.3s;
+}
+
+#next_adventure:hover {
+    transform: scale(1.01);
+    transform: translateY(-5px);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+#next_adventure:hover h2 {
+    color: rgba(125, 116, 255, 0.781);
+}
+
+
+#opiniones {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 0px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid #a1a1a1;
+}
+
+.opinion {
+    padding: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    background-color: white;
+    margin: 10px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.opinion:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.opinion:hover .fecha {
+    color: rgba(125, 116, 255, 0.781);
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+.opinion-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.usuario {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.fecha {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+/* Viajes destacados */
+
+#seccion_carrusel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+#seccion_carrusel h2 {
+    text-align: center;
+    margin: 20px;
+}
+
+#carrusel_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+#carrusel {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#carrusel_track {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+}
+
+.carrusel-item {
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 5px;
+    min-width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.carrusel-content {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.carrusel-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #2c3e50;
+
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+.carrusel-content h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carrusel-btn:hover {
+    transform: scale(1.1);
+    color: #3498db;
+}
+
+.first {
+    background-image: url(../media/viaje_andes.jpg);
+}
+
+.second {
+    background-image: url(../media/viaje_sudeste_asiatico.jpg);
+}
+
+.third {
+    background-image: url(../media/viaje_sabana_africana.jpeg);
+}
+
+.fourth {
+    background-image: url(../media/viaje_centro_europa.jpg);
+}
+
+.btn {
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    #cuadricula_principal {
+        padding-bottom: 20px;
+        gap: 30px;
+    }
+
+    #opiniones {
+        gap: 20px;
+        padding-bottom: 40px;
+    }
+
+    .opinion {
+        margin: 0;
+        height: auto;
+    }
+
+    #next_adventure {
+        height: auto;
+        min-height: 30vh;
+        margin: 10px 0;
+        padding: 30px 10px;
+    }
+
+    #next_adventure h2 {
+        font-size: 2rem;
+        padding: 0 10px;
+        word-wrap: break-word;
+    }
+
+    #carrusel_container {
+        height: auto;
+        min-height: 250px;
+        padding: 20px 0;
+    }
+
+    .carrusel-content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+
+    #next_adventure {
+        height: auto; 
+        min-height: 30vh;
+        margin: 10px 0;
+        padding: 40px 10px;
+    }
+
+    #next_adventure h2 {
+        font-size: 1.75rem;
+        padding: 0 5px;
+        word-wrap: break-word;
+    }
+
+    #opiniones {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 30px;
+        width: 100%;
+    }
+
+    .opinion {
+        margin: 5px 0;
+        height: auto;
+    }
+
+    #carrusel_container {
+        height: auto; 
+        min-height: 250px;
+        padding: 20px 0;
+    }
+
+    #carrusel {
+        width: 100%;
+        min-height: 250px;
+    }
+
+    .carrusel-content h3 {
+        font-size: 1.2rem;
+        white-space: normal;
+    }
+
+    .carrusel-btn {
+        margin: 5px;
+    }
+}
